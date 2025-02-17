@@ -1,0 +1,154 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #003366, #004080);
+    color: white;
+    text-align: center;
+}
+
+nav {
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 30px;
+    transition: linear 0.5s;
+    background: transparent;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+.icon-burger {
+    display: none;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .icon-burger {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    #nav-toggle:checked + ul {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+    }
+}
+
+section {
+    padding: 50px 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.control {
+    width: 200px;
+    display: flex;
+}
+
+
+button {
+    background-color: #0066cc;
+    color: #fff;
+    padding: 15px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+button img {
+    margin-bottom: 10px;
+}
+
+button span {
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: #005bb5;
+    transform: translateY(-5px);
+}
+
+#about p {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
