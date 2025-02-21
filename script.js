@@ -1,28 +1,25 @@
-// Function to toggle light state (ON/OFF)
-function toggleLight(lightId) {
-    const light = document.getElementById(`light${lightId}`).querySelector("button");
-    const img = light.querySelector("img");
-    const span = light.querySelector("span");
+let esp8266IP = "http://192.168.1.100"; // Replace with your ESP8266's IP
 
-    if (img.src.includes("1739147870248.png")) {
-        // If the light is OFF, turn it ON
-        img.src = "img/1739147870234.png";
-        span.textContent = `Turn Off Light ${lightId}`;
-    } else {
-        // If the light is ON, turn it OFF
-        img.src = "img/1739147870248.png";
-        span.textContent = `Turn On Light ${lightId}`;
-    }
+function toggleLight(lightNumber) {
+    const button = document.querySelector(`#light${lightNumber} button`);
+    const img = button.querySelector("img");
+    const span = button.querySelector("span");
+
+    let isOn = img.src.includes("1739147870234.png"); // Check if the light is ON
+    let action = isOn ? "off" : "on"; // Toggle between ON and OFF
+
+    fetch(`${esp8266IP}/light/${lightNumber}/${action}`)
+        .then(response => response.text())
+        .then(data => {
+            console.log(data); // Debugging response from ESP8266
+
+            if (action === "on") {
+                img.src = "img/1739147870234.png"; // Change to ON image
+                span.innerText = `Turn Off Light ${lightNumber}`;
+            } else {
+                img.src = "img/1739147870248.png"; // Change to OFF image
+                span.innerText = `Turn On Light ${lightNumber}`;
+            }
+        })
+        .catch(error => console.error("Error:", error));
 }
-
-// Ensure all lights start in OFF state when the page loads
-document.addEventListener("DOMContentLoaded", function () {
-    for (let i = 1; i <= 3; i++) {
-        const light = document.getElementById(`light${i}`).querySelector("button");
-        const img = light.querySelector("img");
-        const span = light.querySelector("span");
-
-        img.src = "img/1739147870248.png"; // Initial OFF state
-        span.textContent = `Turn On Light ${i}`;
-    }
-});
