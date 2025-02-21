@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #003366;
+            color: #ffffff;
+            padding: 10px 20px;
+        }
+        nav h1, nav h2 {
+            margin: 0;
+        }
+        nav button {
+            background-color: #004080;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        nav button:hover {
+            background-color: #0059b3;
+        }
+        #components {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            border: 2px solid #ccc;
+            margin: 20px;
+            padding: 20px;
+            background: linear-gradient(135deg, #003366, #004080);
+        }
+        .component {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 10px;
+            width: calc(33% - 20px);
+            background-color: #ffffff;
+        }
+        .component h3 {
+            color: black;
+            margin-bottom: 10px;
+        }
+        .component img {
+            border: 1px solid #ccc;
+            padding: 5px;
+            background-color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .component p {
+            color: #000;
+        }
+        h3{
+            display: inline;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h2>Components</h2>
+        <h3 onclick="window.location.href='index.html'">GO BACK</h3>
+    </nav>
+    
+    <section id="components">
+        <div class="component">
+            <h3>Microcontroller</h3>
+            <img src="img/esp8266_board.png" alt="Microcontroller" width="100px">
+            <p>A microcontroller like Arduino or Raspberry Pi is the brain of the system, controlling the various devices and sensors. It processes input from sensors and sends commands to actuators.</p>
+        </div>
+        <div class="component">
+            <h3>Relays</h3>
+            <img src="img/Dual-Channel-Relay-Module-Pinout.jpg" alt="Relays" width="100px">
+            <p>Relays are used to control high-power devices like lights and fans based on the signals from the microcontroller. They act as switches that can be turned on or off electrically.</p>
+        </div>
+        <div class="component">
+            <h3>IoT Modules</h3>
+            <img src="img/jumper-wire.jpg" alt="IoT Module" width="100px">
+            <p>IoT modules like Wi-Fi or Bluetooth enable wireless communication between the system and external devices. They allow remote control and monitoring of the classroom environment.</p>
+        </div>
+    </section>
+</body>
+</html>
+
+    
