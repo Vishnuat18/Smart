@@ -218,3 +218,56 @@ button:hover {
         font-size: 14px;
     }
 }
+
+/* Style for login and signup buttons */
+.auth-btn {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.auth-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.signup-btn {
+    background-color: #00bfff;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.signup-btn:hover {
+    background-color: #008cba;
+}
+
+/* Responsive navigation for mobile */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    #nav-toggle:checked + ul {
+        display: flex;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 18px;
+        padding: 10px;
+        display: block;
+    }
+
+    .auth-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
