@@ -132,12 +132,6 @@ button:hover {
     transform: translateY(-5px);
 }
 
-#about p {
-    max-width: 600px;
-    margin: 0 auto;
-    line-height: 1.6;
-    font-size: 1.1em;
-}
 
 @media (max-width: 768px) {
     h1 {
