@@ -152,3 +152,69 @@ button:hover {
         font-size: 14px;
     }
 }
+
+
+/* Centered authentication container */
+.auth-container {
+    width: 90%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    text-align: center;
+}
+
+/* Form input fields */
+.auth-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Button styling */
+.auth-container button {
+    background-color: #0066cc;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background 0.3s ease-in-out;
+}
+
+.auth-container button:hover {
+    background-color: #005bb5;
+}
+
+/* Links */
+.auth-container p {
+    margin-top: 15px;
+}
+
+.auth-container a {
+    color: #00bfff;
+    text-decoration: none;
+}
+
+.auth-container a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .auth-container {
+        padding: 20px;
+    }
+
+    .auth-container input,
+    .auth-container button {
+        font-size: 14px;
+    }
+}
