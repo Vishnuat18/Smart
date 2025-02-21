@@ -6,19 +6,18 @@
     <title>Smart Classroom Automation</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="img/icons8-automation-50.png">
-
 </head>
 <body>
     <nav>
         <div class="logo">Smart Dashboard</div>
-        <label for="nav-toggle" class="icon-burger">
-            &#8942;
-        </label>
+        <label for="nav-toggle" class="icon-burger">&#8942;</label>
         <input type="checkbox" id="nav-toggle">
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="components.html">Components</a></li>
             <li><a href="#about">About Us</a></li>
+            <li><a href="login.html" class="auth-btn">Login</a></li>
+            <li><a href="signup.html" class="auth-btn signup-btn">Sign Up</a></li>
         </ul>
     </nav>
     <hr>
@@ -26,14 +25,22 @@
         <h1>SMART DASHBOARD</h1>
         <div class="container">
             <div class="control" id="light1">
-                <button onclick="toggleLight(1)"><img src="img/1739147870248.png" width="80" alt=""><span>Turn Off Light 1</span></button>
+                <button onclick="toggleLight(1)">
+                    <img src="img/1739147870248.png" width="80" alt="">
+                    <span>Turn Off Light 1</span>
+                </button>
             </div>
             <div class="control" id="light2">
-                <button onclick="toggleLight(2)"><img src="img/1739147870248.png" width="80" alt=""><span>Turn Off Light 2</span></button>
+                <button onclick="toggleLight(2)">
+                    <img src="img/1739147870248.png" width="80" alt="">
+                    <span>Turn Off Light 2</span>
+                </button>
             </div>
             <div class="control" id="light3">
-                <button onclick="toggleLight(3)"><img src="img/1739147870248.png" width="80" alt=""><span>Turn Off Light 3</span></button>
-
+                <button onclick="toggleLight(3)">
+                    <img src="img/1739147870248.png" width="80" alt="">
+                    <span>Turn Off Light 3</span>
+                </button>
             </div>
         </div>
     </section>
