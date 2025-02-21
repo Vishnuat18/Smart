@@ -89,6 +89,13 @@ font-size: 2em;
 margin-bottom: 20px;
 }
 
+p {
+    font-size: clamp(14px, 1.2vw, 18px); 
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .container {
 display: flex;
 justify-content: center;
