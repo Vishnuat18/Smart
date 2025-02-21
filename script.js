@@ -13,8 +13,8 @@ function toggleLight(light) {
                 : `Turn ON Light ${light}`;
 
             document.getElementById(`light${light}-img`).src = lightStates[light] 
-                ? "on.png" 
-                : "off.png";
+                ? ""img/1739147870234.png" 
+                : ""img/1739147870248.png";
         })
         .catch(error => console.error("Error:", error));
 }
