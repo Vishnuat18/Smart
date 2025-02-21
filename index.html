@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Classroom Automation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icons8-automation-50.png">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Smart Classroom </div>
+        
+        <label for="nav-toggle" class="icon-burger">
+            &#8942; <!-- Unicode for vertical ellipsis -->
+        </label>
+        <input type="checkbox" id="nav-toggle">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#components">Components</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+        
+    </nav>
+<hr>
+    <section id="home">
+        <h1>SMART CLASSROOM AUTOMATION</h1>
+        <div class="container">
+            <div class="control" id="one">
+                <button onclick="toggleFan(false)"><img src="img/1739147870261.png" width="80" alt=""><span>Turn On Fan</span></button>
+            </div>
+            <div class="control" id="two">
+                <button onclick="toggleFan(true)"><img src="img/1739147870279.png" width="80" alt=""><span>Turn Off Fan</span></button>
+            </div>
+            <div class="control" id="three">
+                <button onclick="toggleLight(true)"><img src="img/1739147870234.png" width="80" alt=""><span>Turn On Light</span></button>
+            </div>
+            <div class="control" id="four">
+                <button onclick="toggleLight(true)"><img src="img/1739147870248.png" width="80" alt=""><span>Turn Off Light</span></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Our Smart Classroom Automation system allows seamless control of fans and lights using IoT technology, enhancing learning environments with efficiency and energy-saving solutions.</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Classroom Automation</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="img/icons8-automation-50.png">
+
+</head>
+<body>
+    <nav>
+        <div class="logo">Smart Classroom</div>
+        <label for="nav-toggle" class="icon-burger">
+            &#8942;
+        </label>
+        <input type="checkbox" id="nav-toggle">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#components">Components</a></li>
+            <li><a href="#about">About Us</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <section id="home">
+        <h1>SMART CLASSROOM AUTOMATION</h1>
+        <div class="container">
+            <div class="control" id="light1">
+                <button onclick="toggleLight(1)"><img src="img/1739147870261.png" width="80" alt=""><span>Turn Off Light 1</span></button>
+            </div>
+            <div class="control" id="light2">
+                <button onclick="toggleLight(2)"><img src="img/1739147870279.png" width="80" alt=""><span>Turn Off Light 2</span></button>
+            </div>
+            <div class="control" id="light3">
+                <button onclick="toggleLight(3)"><img src="img/1739147870234.png" width="80" alt=""><span>Turn Off Light 3</span></button>
+
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Our Smart Classroom Automation system allows seamless control of lights using IoT technology, enhancing learning environments with efficiency and energy-saving solutions.</p>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
