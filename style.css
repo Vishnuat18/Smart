@@ -141,10 +141,8 @@ transform: translateY(-5px);
 }
 
 #about p {
-max-width: 600px;
-margin: 0 auto;
-line-height: 1.6;
-font-size: 1.1em;
+margin:0 auto;
+text-align: centre;
 }
 
 @media (max-width: 768px) {
