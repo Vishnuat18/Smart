@@ -14,11 +14,11 @@ function toggleLight(lightNumber) {
             console.log(data); // Debug response from ESP8266
 
             if (action === "on") {
-                img.src = "img/1739147870234.png"; // Change to ON image
-                span.innerText = `Turn On Light ${lightNumber}`;
-            } else {
-                img.src = "img/1739147870248.png"; // Change to OFF image
+                img.src = "img/1739147870248.png"; // Change to ON image
                 span.innerText = `Turn Off Light ${lightNumber}`;
+            } else {
+                img.src = "img/1739147870234.png"; // Change to OFF image
+                span.innerText = `Turn On Light ${lightNumber}`;
             }
         })
         .catch(error => console.error("Error:", error));
