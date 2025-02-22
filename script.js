@@ -6,12 +6,12 @@ function toggleLight(lightNumber) {
     const span = button.querySelector("span");
 
     let isOn = img.src.includes("1739147870234.png"); // Check if the light is ON
-    let action = isOn ? "off" : "on"; // Toggle between ON and OFF
+    let action = isOn ? "off" : "on"; // Toggle action
 
     fetch(`${esp8266IP}/light/${lightNumber}/${action}`)
         .then(response => response.text())
         .then(data => {
-            console.log(data); // Debugging response from ESP8266
+            console.log(data); // Debug response from ESP8266
 
             if (action === "on") {
                 img.src = "img/1739147870234.png"; // Change to ON image
