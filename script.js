@@ -18,9 +18,11 @@ function toggleLight(lightNumber) {
             if (action === "on") {
                 img.src = window.location.origin + "/img/1739147870234.png"; // Light ON image
                 span.innerText = `Turn Off Light ${lightNumber}`;
+alert("Button is clicked");
             } else {
                 img.src = window.location.origin + "/img/1739147870248.png"; // Light OFF image
                 span.innerText = `Turn On Light ${lightNumber}`;
+alert("Button is off now");
             }
         })
         .catch(error => {
