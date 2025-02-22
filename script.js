@@ -1,4 +1,4 @@
-let esp8266IP = "http://192.168.1.100"; // Update with your ESP8266's IP
+let esp8266IP = "http://192.168.114.160"; // Update with your ESP8266's IP
 
 function toggleLight(lightNumber) {
     const button = document.querySelector(`#light${lightNumber} button`);
