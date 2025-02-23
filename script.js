@@ -1,6 +1,7 @@
 function toggleLight(lightNumber) {
   var xhr = new XMLHttpRequest();
-  var button = document.getElementById("light" + lightNumber).querySelector("button");
+  var button = document.getElementById("light" + lightNumber);
+  button.querySelector("button");
   var currentState = button.querySelector("span").innerText.includes("Off") ? "off" : "on";
   var action = currentState === "off" ? "on" : "off";
 
