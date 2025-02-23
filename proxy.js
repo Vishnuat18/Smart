@@ -1,30 +1,32 @@
+const http = require('http');
 const express = require('express');
 const app = express();
 
-app.get('/light/:lightNumber/:action', (req, res) => {
-    const lightNumber = req.params.lightNumber;
-    const action = req.params.action;
-
-    try {
-        // Your logic to toggle the light
-        // For example:
-        if (toggleLight(lightNumber, action)) {
-            res.status(200).send('Light toggled successfully');
-        } else {
-            res.status(400).send('Invalid light number or action');
-        }
-    } catch (error) {
-        console.error('Error toggling light:', error);
-        res.status(500).send('Internal Server Error');
-    }
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
 });
 
-function toggleLight(lightNumber, action) {
-    // Implement the logic to toggle the light
-    // Return true if successful, false otherwise
-    return true;
-}
+app.get('/light/:id/:action', (req, res) => {
+  const { id, action } = req.params;
+  const url = `http://192.168.114.160/light/${id}/${action}`;
+
+  http.get(url, (proxyRes) => {
+    let data = '';
+
+    proxyRes.on('data', (chunk) => {
+      data += chunk;
+    });
+
+    proxyRes.on('end', () => {
+      res.send(data);
+    });
+  }).on('error', (e) => {
+    res.status(500).send(`Error: ${e.message}`);
+  });
+});
 
 app.listen(3000, () => {
-    console.log('Server running on port 3000');
-});
+  console.log('Proxy server is running on port 3000');
+})
