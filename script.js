@@ -6,7 +6,7 @@ function toggleLight(lightNumber) {
 
     xhr.open("GET", `http://localhost:3000/light/${lightNumber}/${action}`, true); // Change URL to your proxy server's address
     xhr.onload = function() {
-        if (xhr.status === 200) {
+        if (xhr.status === 500) {
             button.querySelector("span").innerText = "Turn " + (action === "on" ? "Off" : "On") + " Light " + lightNumber;
         }
     };
