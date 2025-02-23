@@ -11,7 +11,7 @@ function toggleLight(lightNumber) {
     let action = isOn ? "off" : "on"; // Toggle between ON and OFF
 
     // Send request to ESP8266
-    fetch(`${esp8266IP}/light/${lightNumber}/${action}`)
+    fetch(`192.168.114.160/light/1/on`)
         .then(response => response.text())
         .then(data => {
             console.log("ESP Response:", data); // Debugging response from ESP8266
