@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+I<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -48,6 +48,21 @@
         <h2>Project Overview</h2>
         <p>Smart Automation Hub is a remote device control system that enables seamless automation and monitoring. It allows users to manage connected devices through a web-based dashboard, ensuring efficiency and convenience. With wireless communication and automation capabilities, it optimizes power usage and enhances user control. This system is ideal for home, office, and industrial automation.</p>
     </section>
-    <script src="script.js"></script>
+    <script src="script.js">
+    function toggleLight(lightNumber) {
+        var xhr = new XMLHttpRequest();
+        var button = document.getElementById("light" + lightNumber).querySelector("button");
+        var currentState = button.querySelector("span").innerText.includes("Off") ? "off" : "on";
+        var action = currentState === "off" ? "on" : "off";
+
+        xhr.open("GET", `http://localhost:3000/light/${lightNumber}/${action}`, true);
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                button.querySelector("span").innerText = "Turn " + (action === "on" ? "Off" : "On") + " Light " + lightNumber;
+            }
+        };
+        xhr.send();
+    }
+</script>
 </body>
 </html>
