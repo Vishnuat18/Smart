@@ -1,4 +1,4 @@
-I<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -25,21 +25,21 @@ I<!DOCTYPE html>
         <h1>CONNECTED CONTROL PANEL</h1>
         <div class="container">
             <div class="control" id="light1">
-                <button onclick="localhost:3000/light/1/on">
+                <button onclick="toggleLight1()">
                     <img src="img/1739147870248.png" width="80" alt="">
-                    <span>Turn off Light 1</span>
+                    <span>Turn On Light 1</span>
                 </button>
             </div>
             <div class="control" id="light2">
-                <button onclick="localhost:3000/light/2/on">
+                <button onclick="toggleLight2()">
                     <img src="img/1739147870248.png" width="80" alt="">
-                    <span>Turn offLight 2</span>
+                    <span>Turn On Light 2</span>
                 </button>
             </div>
             <div class="control" id="light3">
-                <button onclick="localhost:3000/light/3/on">
+                <button onclick="toggleLight3()">
                     <img src="img/1739147870248.png" width="80" alt="">
-                    <span>Turn Off Light 3</span>
+                    <span>Turn On Light 3</span>
                 </button>
             </div>
         </div>
@@ -48,21 +48,6 @@ I<!DOCTYPE html>
         <h2>Project Overview</h2>
         <p>Smart Automation Hub is a remote device control system that enables seamless automation and monitoring. It allows users to manage connected devices through a web-based dashboard, ensuring efficiency and convenience. With wireless communication and automation capabilities, it optimizes power usage and enhances user control. This system is ideal for home, office, and industrial automation.</p>
     </section>
-    <script src="proxy.js">
-    function toggleLight(lightNumber) {
-        var xhr = new XMLHttpRequest();
-        var button = document.getElementById("light" + lightNumber).querySelector("button");
-        var currentState = button.querySelector("span").innerText.includes("Off") ? "off" : "on";
-        var action = currentState === "off" ? "on" : "off";
-
-        xhr.open("GET", `http://localhost:3000/light/${lightNumber}/${action}`, true);
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                button.querySelector("span").innerText = "Turn " + (action === "on" ? "Off" : "On") + " Light " + lightNumber;
-            }
-        };
-        xhr.send();
-    }
-</script>
+    <script src="script.js"></script>
 </body>
 </html>
