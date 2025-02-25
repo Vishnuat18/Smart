@@ -1,9 +1,13 @@
-function toggleLight1() {
-    var button = document.getElementById("light1").querySelector("button");
-    var currentState = button.querySelector("span").innerText.includes("Off") ? "off" : "on";
-    var action = currentState === "on" ? "off" : "on";
+let lightStates = {
+    1: false,
+    2: false,
+    3: false
+};
 
-    fetch(`http://localhost:3001/light/1/${action}`)
+function toggleLight(lightNumber) {
+    lightStates[lightNumber] = !lightStates[lightNumber];
+    let action = lightStates[lightNumber] ? 'on' : 'off';
+    fetch(`http://localhost:3001/light/${lightNumber}/${action}`)
         .then(response => {
             if (!response.ok) {
                 throw new Error(`Failed to load resource: The server responded with a status of ${response.status}`);
@@ -11,52 +15,19 @@ function toggleLight1() {
             return response.text();
         })
         .then(data => {
-            button.querySelector("span").innerText = "Turn " + (action === "on" ? "Off" : "On") + " Light 1";
-            console.log(data);
+            console.log(`Light ${lightNumber} turned ${action}: ${data}`);
+            updateButton(lightNumber, action);
         })
         .catch(error => {
             console.error('Error:', error);
         });
+        updateButton(lightNumber, action);
 }
 
-function toggleLight2() {
-    var button = document.getElementById("light2").querySelector("button");
-    var currentState = button.querySelector("span").innerText.includes("Off") ? "off" : "on";
-    var action = currentState === "off" ? "on" : "off";
-
-    fetch(`http://localhost:3001/light/2/${action}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Failed to load resource: The server responded with a status of ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(data => {
-            button.querySelector("span").innerText = "Turn " + (action === "on" ? "Off" : "On") + " Light 2";
-            console.log(data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-}
-
-function toggleLight3() {
-    var button = document.getElementById("light3").querySelector("button");
-    var currentState = button.querySelector("span").innerText.includes("Off") ? "off" : "on";
-    var action = currentState === "off" ? "on" : "off";
-
-    fetch(`http://localhost:3001/light/3/${action}`)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`Failed to load resource: The server responded with a status of ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(data => {
-            button.querySelector("span").innerText = "Turn " + (action === "on" ? "Off" : "On") + " Light 3";
-            console.log(data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
+function updateButton(lightNumber, action) {
+    const button = document.getElementById(`btn${lightNumber}`);
+    const image = document.getElementById(`img${lightNumber}`);
+    var span = button.querySelector('span')
+    span.textContent = action === 'on' ? `Turn Off Light ${lightNumber}` : `Turn On Light ${lightNumber}`;
+    image.src = action === 'on' ? 'img/1739147870248.png' : 'img/1739147870234.png' ; // Update image source with the appropriate images for on and off states
 }
